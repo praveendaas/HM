@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg nav-pills fixed-top navbar-light" style="background-color: rgb(3, 72, 168); line-height: 10pt;">
+  <a class="aa" style="color: rgb(255, 255, 255);"><img src="assets/logo.png" width="30px" height="20px">HaiPals &nbsp;</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(255, 255, 255);" >
+    <span class="navbar-toggler-icon" ></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" >
+        <a class="nav-link" style="color: rgb(255, 255, 255); " routerLink="" >Home  </a> 
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" style="color: rgb(255, 255, 255);" routerLink="/aboutus">Who We Are </a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" style="color: rgb(255, 255, 255);" routerLink="/features">What We Build </a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" style="color: rgb(255, 255, 255);" routerLink="/advertisement/home">Advertisements </a>
+      </li>
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" style="color: rgb(255, 255, 255);" routerLink="/careers">Careers </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" (ngSubmit)="signIn(angForm.value)" [formGroup]="angForm" novalidate>
+      <input class="form-control form-control-sm mr-sm-0" type="email" placeholder="Mobile Or Email" aria-label="text" formControlName="email">
+      <input class="form-control form-control-sm mr-sm-0" type="password" placeholder="Password" aria-label="Password" formControlName="password">
+      <button class="btn btn-primary btn-sm my-2 my-sm-0" type="submit" >Login</button>
+    </form>
+  </div>
+</nav>
+<br><br>
+<script>
+  $('.navbar-collapse a').click(function(){
+      $(".navbar-collapse").collapse('hide');
+  });
+</script>

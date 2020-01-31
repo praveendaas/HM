@@ -119,23 +119,13 @@ input[type=number] {
 }
 
 .iamCol {
-	font-size:50px;
-}
-.iamCol p:nth-child(2) { margin-top: -20pt !important; }
-.slideCol {
-    overflow: hidden;
+	overflow: hidden;
 	font-size:50px;
     display: block;
     width: auto;
 }
-.slideCol p { margin: 0px !important; }
+.iamCol p:nth-child(2) { margin-top: -20pt !important; }
 
-.scroller {
-   height: 70pt;
-   line-height: 70pt;
-   overflow: hidden;
-}
-.scroller .inner { animation: 10s linear infinite running scroll; }
 @keyframes scroll {
    0%  	{margin-top: 0px;}
    15% 	{margin-top: 0px;}
@@ -185,3 +175,5 @@ input[type=number] {
 	.iamCol { text-align: right; font-size:30pt; }
 	.slideCol { font-size: 55pt; text-align: left; }
 }
+
+.carousel-indicators li { visibility: hidden; }

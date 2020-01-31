@@ -1,0 +1,144 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <form (ngSubmit)="addImage(payForm.value)" [formGroup]="payForm" novalidate>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-md-6">Select City</label>
+                                    <select class="form-control" formControlName="City" (change)="amnt(payForm.value)">
+                                        <option value="">--Select--</option>
+                                        <option value="Ahmedabad">Ahmedabad
+                                        </option>
+                                        <option value="Allahabad">Allahabad</option>
+                                        <option value="Amaravathi">Amaravathi</option>
+                                        <option value="Bangalore">Bangalore</option>
+                                        <option value="Bhopal">Bhopal</option>
+                                        <option value="Bhuvaneshwar">Bhubaneshwar</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Chennai">Chennai</option>
+                                        <option value="Coimbatore">Coimbatore</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Hyderabad">Hyderabad</option>
+                                        <option value="Jaipur">Jaipur</option>
+                                        <option value="Kanpur">Kanpur</option>
+                                        <option value="Kochi">Kochi</option>
+                                        <option value="Kolkata">Kolkata</option>
+                                        <option value="Madurai">Madurai</option>
+                                        <option value="Mangalore">Mangalore</option>
+                                        <option value="Mumbai">Mumbai</option>
+                                        <option value="Mysore">Mysore</option>
+                                        <option value="Nagpur">Nagpur</option>
+                                        <option value="Patna">Patna</option>
+                                        <option value="Pune">Pune</option>
+                                        <option value="Pondicherry">Pondicherry</option>
+                                        <option value="Ranchi">Ranchi</option>
+                                        <option value="Trichy">Trichy</option>
+                                        <option value="Trivandrum">Trivandrum</option>
+                                        <option value="Varanasi">Varanasi</option>
+                                        <option value="Vijayawada">Vijayawada</option>
+                                        <option value="Visakhapattnam">Visakhapattnam</option>
+                                    </select>
+                                    <div *ngIf="payForm.controls['City'].invalid && (payForm.controls['City'].dirty || payForm.controls['City'].touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="payForm.controls['City'].errors.required">
+                                        </div>
+                                        City is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-md-6">Amount</label>
+                                    <input type="number" class="form-control input-sm" formControlName="Amount" #Amount
+                                        value="{{this.total}}">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-primary" (click)="post(payForm.value)" style="float: right;">
+                            Next
+                        </button>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+</div>
+<div *ngIf="show">
+    <h3 class="text-center" style="color: rgb(3, 72, 168);">Post your Advertisement Here</h3>
+    <form (ngSubmit)="addImage(angForm.value)" [formGroup]="angForm" novalidate>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="form-group form-group-sm">
+                    <label class="col-md-6">Category</label>
+                    <input type="text" class="form-control input-sm" formControlName="Category" #Category  value="{{this.category}}"/>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="form-group form-group-sm">
+                    <label class="col-md-12">Description </label>
+                    <textarea type="textarea" class="form-control input-sm" rows=3 formControlName="Description"
+                        #Description></textarea>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row" *ngIf="uploader">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="form-group files color">
+                    <label class="col-md-8">Upload Your Advertisement Here(Only .jpg or .png)</label>
+                    <span class="ng-scope"></span><input type="file" (change)="upload($event)" accept=".png,.jpg"
+                        formControlName="Advertisement" #Advertisement>
+
+                </div>
+            </div>
+            <div *ngIf="angForm.controls['Advertisement'].invalid && (angForm.controls['Advertisement'].dirty || angForm.controls['Advertisement'].touched)"
+                class="alert alert-danger">
+                Advertisement is required.
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row" *ngIf="previwer">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="form-group files color">
+                    <label class="col-md-6">Your Advertisement:</label>
+                    <img [src]="url">
+
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="form-group form-group-sm" style="float: right;">
+                    <button type="submit" class="btn btn-primary" [disabled]="angForm.pristine || angForm.invalid">
+                        Make Payment
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </form>
+</div>

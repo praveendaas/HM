@@ -1,0 +1,27 @@
+<table>
+    <thead>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Resume</th>
+      <th>LinkedIn</th>
+      <th>Experience</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let career of careers">
+  
+        <td>{{career.FirstName}}</td>
+        <td>{{career.LastName}}</td>
+        <td>{{career.Email}}</td>
+        <td>{{career.Phone}}</td>
+        <td><a href="{{career.Resume}}">Click Here</a></td>
+        <td>{{career.LinkedIn}}</td>
+        <td>{{career.Experience}}</td>
+        <td>
+            
+            <button >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

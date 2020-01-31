@@ -1,164 +1,18 @@
-.fb-header-base{
-	width:100%;
-	height:90px;
-	top:0;
-	left:0;
-	color:white;
-	z-index:7;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.aa{
+    visibility: hidden;
 }
-.fb-header{
-	width:100%;
-	height:90px;
-	position:absolute;
-	background:#ffffff;
-	top:0;
-	left:0;
-	color:rgb(3, 78, 162);
-	z-index:7;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-#form1{
-	left:800px;
-	height:60px;
-	width:180px;
-	top:20px;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size:15px;
-    position: relative;
-}
-#form2{
-	left:1000px;
-	height:60px;
-	width:250px;
-	top:20px;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size:15px;
-}
-.submit1{
-	left:1215px;
-	top:40px;
-	background:#3b61b3;
-	color:white;
-	position: absolute;
-	z-index:20;
-	height:30px;
-	width:50px;
-    cursor:pointer;	
-    font-size: 14px;
-}
-/* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) and (max-width : 479px) {
-	#textSlider.row { margin-right: 0px !important; margin-left: 0px !important; }
-    .iamCol { text-align: center; font-size:20pt; }
-	.iamCol p { display: inline !important; }
-	.slideCol { font-size: 25pt; text-align: center; margin-top: -20px; }
-}
-
 /* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) and (max-width : 765px) {
-	#form1{
-        left:200px;
-        height:60px;
-        width:180px;
-        top:20px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:15px;
-        position: relative;
-    }
-    #form2{
-        left:400px;
-        height:60px;
-        width:250px;
-        top:20px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:15px;
-    }
-    .submit1{
-        left:615px;
-        top:40px;
-        background:#3b61b3;
-        color:white;
-        position: absolute;
-        z-index:20;
-        height:30px;
-        width:50px;
-        cursor:pointer;	
-        font-size: 14px;
-    }
-}
-@media (min-width: 768px)
-{
-    .navbar-toggle {
-        display: none;
-    }
+@media only screen and (max-width : 765px) {
 
-    .navbar-header button {
-        display: block;
-    }
-}
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) and (max-width : 992px) {
-	#form1{
-        left:400px;
-        height:60px;
-        width:180px;
-        top:20px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:15px;
-        position: relative;
-    }
-    #form2{
-        left:600px;
-        height:60px;
-        width:250px;
-        top:20px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:15px;
-    }
-    .submit1{
-        left:815px;
-        top:40px;
-        background:#3b61b3;
-        color:white;
-        position: absolute;
-        z-index:20;
-        height:30px;
-        width:50px;
-        cursor:pointer;	
-        font-size: 14px;
-    }
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) and (max-width : 1200px) {
-	#form1{
-        left:600px;
-        height:60px;
-        width:180px;
-        top:20px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:15px;
-        position: relative;
-    }
-    #form2{
-        left:800px;
-        height:60px;
-        width:250px;
-        top:20px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:15px;
-    }
-    .submit1{
-        left:1015px;
-        top:40px;
-        background:#3b61b3;
-        color:white;
-        position: absolute;
-        z-index:20;
-        height:30px;
-        width:50px;
-        cursor:pointer;	
-        font-size: 14px;
-    }
+  form{
+      visibility: hidden;
+  }
+  .aa{
+      visibility:visible;
+      content: "HAIPALS";
+  }
+  .no-padding {
+      padding-left: 0;
+      padding-right: 0;
+   }
 }

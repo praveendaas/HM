@@ -1,0 +1,28 @@
+.text-toogle[aria-expanded=false] .text-expanded {
+    display: none;
+  }
+  .text-toogle[aria-expanded=true] .text-collapsed {
+    display: none;
+  }
+  .aa{
+      visibility: hidden;
+  }
+  /* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 765px) {
+    
+	form{
+        visibility: hidden;
+    }
+    .aa{
+        visibility:visible;
+        content: "HAIPALS";
+    }
+    .no-padding {
+        padding-left: 0;
+        padding-right: 0;
+     }
+}
+.navbar-nav > li{
+  margin-left:20px;
+  margin-right:20px;
+}
