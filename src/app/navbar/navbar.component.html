@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg nav-pills fixed-top navbar-light" style="background-color: rgb(3, 72, 168); line-height: 10pt;">
-  <a class="aa" style="color: rgb(255, 255, 255);"><img src="assets/logo.png" width="30px" height="20px">HaiPals &nbsp;</a>
+  <a class="aa" style="color: rgb(255, 255, 255);"><img src="assets/logo.png" width="50px" height="40px">&nbsp;HaiPals </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(255, 255, 255);" >
     <span class="navbar-toggler-icon" ></span>
@@ -16,20 +16,31 @@
         <a class="nav-link" style="color: rgb(255, 255, 255);" routerLink="/features">What We Build </a>
       </li>
       <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" style="color: rgb(255, 255, 255);" routerLink="/advertisement/home">Advertisements </a>
+        <a class="nav-link" style="color: rgb(255, 255, 255);" href="/advertisement">Advertisements </a>
       </li>
       <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
         <a class="nav-link" style="color: rgb(255, 255, 255);" routerLink="/careers">Careers </a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" (ngSubmit)="signIn(angForm.value)" [formGroup]="angForm" novalidate>
-      <input class="form-control form-control-sm mr-sm-0" type="email" placeholder="Mobile Or Email" aria-label="text" formControlName="email">
-      <input class="form-control form-control-sm mr-sm-0" type="password" placeholder="Password" aria-label="Password" formControlName="password">
-      <button class="btn btn-primary btn-sm my-2 my-sm-0" type="submit" >Login</button>
+    <form class="form-inline my-0  my-lg-0" [formGroup]="angForm" novalidate>
+      <div class="row">
+        <div class="col-lg-5 pl-0">
+          <input class="form-control form-control-sm mr-sm-0" type="email" placeholder="Mobile Or Email"
+            aria-label="text" formControlName="Email" #Email>
+        </div>
+        <div class="col-lg-5 px-0">
+          <input class="form-control form-control-sm ml-sm-0" type="password" placeholder="Password"
+            aria-label="Password" formControlName="Password" #Password>
+          <a class="nav-link" style="color: rgb(255, 255, 255); font-size: 15px;" routerLink="/forgot"><small>Forgot Password?</small>  </a>
+        </div>
+        <div class="col-lg-2 pl-0">
+          <button class="btn btn-primary btn-sm my-2 my-sm-0" type="button" (click)="authService.SignIn(Email.value, Password.value)">Login</button>
+        </div>
+      </div>
     </form>
   </div>
 </nav>
-<br><br>
+<br><br><br>
 <script>
   $('.navbar-collapse a').click(function(){
       $(".navbar-collapse").collapse('hide');

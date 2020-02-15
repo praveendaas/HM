@@ -1,10 +1,19 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
 export const environment = {
   production: false,
    firebaseConfig : {
+    apiKey: "AIzaSyB54V3NouD9mh_PwfhmiqRSiqyGvjJh8RE",
+  authDomain: "haipals-messenger.firebaseapp.com",
+  databaseURL: "https://haipals-messenger.firebaseio.com",
+  projectId: "haipals-messenger",
+  storageBucket: "haipals-messenger.appspot.com",
+  messagingSenderId: "26770891005",
+  appId: "1:26770891005:web:59dd07789ae14109679e94",
+  measurementId: "G-R0KG8XF9PG"
+  },
+  firebaseConfig2:{
     apiKey: "AIzaSyCRFIvi_HVZrBDI6AyolGWeDEZiybhysdk",
     authDomain: "mychat-59ab5.firebaseapp.com",
     databaseURL: "https://mychat-59ab5.firebaseio.com",

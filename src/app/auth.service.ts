@@ -17,7 +17,7 @@ SignIn(email: string, password: string) {
   .signInWithEmailAndPassword(email, password)
   .then(res => {
   console.log('You are Successfully logged in!');
-  this.router.navigateByUrl('/careers/view');
+  this.router.navigateByUrl('/chat');
   })
   .catch(err => {
   console.log('Something is wrong:',err.message);

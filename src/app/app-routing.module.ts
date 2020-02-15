@@ -8,10 +8,9 @@ import { WhatWeBuildComponent } from './what-we-build/what-we-build.component';
 import { FeaturesComponent } from './features/features.component';
 import { ChatComponent } from './chat/chat.component';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
-import { PaymentComponent } from './payment/payment.component';
 import { PrivacyComponent } from './privacy/privacy.component';
-import { AdvertisementHomeComponent } from './advertisement-home/advertisement-home.component';
 import { PostComponent } from './post/post.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 
 const routes: Routes = [
@@ -52,26 +51,27 @@ const routes: Routes = [
     path:'advertisement',
     component:AdvertisementComponent
   },
-  {
-    path:'payment',
-    component:PaymentComponent
-  },
+  
   {
     path:'privacy',
     component:PrivacyComponent
   },
   {
-    path:'advertisement/home',
-    component:AdvertisementHomeComponent
-  },
-  {
     path:'post',
     component:PostComponent
+  },
+  {
+    path:'forgot',
+    component:ForgotComponent
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 

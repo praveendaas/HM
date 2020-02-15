@@ -11,7 +11,7 @@
 @media only screen and (max-width : 765px) {
     
 	form{
-        visibility: hidden;
+        display: none;
     }
     .aa{
         visibility:visible;

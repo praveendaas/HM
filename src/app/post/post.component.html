@@ -1,2 +1,31 @@
 <app-navbar></app-navbar>
 <br>
+
+<div class="row">
+    <div class="col-md-4">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="1000">
+            <div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block" src="assets/logo2.PNG" width="300px" height="200px" alt="First slide">
+                    </div>
+                    <div class="carousel-item" *ngFor="let ad of ads1">
+                        <div class="card">
+                            <div class="card-header" style="background-color: rgb(3, 72,168);color: #ffff;">
+                                <small> <b>
+                                        <p>{{ad.Category}}/{{ad.Subcat}}/{{ad.Contact}}</p>
+                                    </b></small>
+                            </div>
+                            <div class="card-header text-center" *ngIf="ad.imageUrl">
+                                <img src="{{(ad.imageUrl) }}" width="320px" height="180px" alt="First slide">
+                            </div>
+                            <div class="card-header text-center" *ngIf="ad.Advertisements">
+                                <p>{{ad.Advertisements}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

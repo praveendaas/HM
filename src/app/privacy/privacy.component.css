@@ -1,3 +1,7 @@
-p{
+ul,p{
     font-size: 15px;
+}
+.nav-link:hover{
+    background-color: rgb(3, 72, 168);
+    color:#fff;
 }

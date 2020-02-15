@@ -6,26 +6,32 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CareersComponent } from './careers/careers.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { CareersService } from './careers.service';
-import { AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
-import { AngularFireAuthModule } from '@angular/fire/auth'
+
+import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth'
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { CareersShowComponent } from './careers-show/careers-show.component';
 import { LayoutComponent } from './layout/layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
 import { WhatWeBuildComponent } from './what-we-build/what-we-build.component';
-import { FeaturesComponent } from './features/features.component';
+import { FeaturesComponent } from './features/features.component'; 
 import { ChatComponent } from './chat/chat.component';
-import { PaymentComponent } from './payment/payment.component';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { SelectService } from './select.service';
 import { PrivacyComponent } from './privacy/privacy.component';
-import { AdvertisementHomeComponent } from './advertisement-home/advertisement-home.component';
 import { PostComponent } from './post/post.component';
+import { SelectCatService } from './selectCatService.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UserService } from './user.service';
+import { ForgotComponent } from './forgot/forgot.component';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { DatePipe } from '@angular/common';
+import { ReplacePipe } from './replace.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,15 +44,16 @@ import { PostComponent } from './post/post.component';
     WhatWeBuildComponent,
     FeaturesComponent,
     ChatComponent,
-    PaymentComponent,
     AdvertisementComponent,
     PrivacyComponent,
-    AdvertisementHomeComponent,
-    PostComponent
+    PostComponent,
+    ForgotComponent
   ],
   imports: [
     BrowserModule,
+    DatePickerModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -56,7 +63,7 @@ import { PostComponent } from './post/post.component';
         AngularFireStorageModule
   ],
   
-  providers: [CareersService,AngularFirestore,SelectService],
+  providers: [CareersService,SelectService, SelectCatService,UserService,DatePipe,ReplacePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
